@@ -6,35 +6,28 @@ import java.util.Scanner;
 public class Ex02 {
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int valor[] = new int[10];
+        int maior = valor[0], menor = Integer.MAX_VALUE;
 
-        int i, media = 0;
-        int vetor[]= new int [10];
-        Scanner leitor= new Scanner(System.in);
-        int maior = 0, menor =0;
-
-
-        for(i=0;i<= vetor.length-1;i++){
-            System.out.print("Digite 10 valores : ");
-            vetor[i]=leitor.nextInt();
-        }
-
-        for(i = 0;i<= vetor.length-1;i++){
-
-
-            if(vetor[i]>maior){
-                maior = vetor[i];
-            }
-            if(vetor[i]<menor){
-                menor = vetor[i];
+        for (int i = 0; i < valor.length; i++) {
+            System.out.print("Digite o " + (i + 1) + "º valor: ");
+            valor[i] = sc.nextInt();
+            if (valor[i] > maior) {
+                maior = valor[i];
             }
         }
-        System.out.println("o menor valor digitado : "+menor);
-        System.out.println("O maior valor digitado : "+maior);
-        System.out.println("A media é : "+ media);
+        for (int j = 0; j < valor.length; j++) {
+            if (valor[j] < menor) {
+                menor = valor[j];
+            }
+        }
 
+        System.out.println("Maior valor = " + maior);
+        System.out.println("Menor valor = " + menor);
     }
-
 }
+
 
 
 
